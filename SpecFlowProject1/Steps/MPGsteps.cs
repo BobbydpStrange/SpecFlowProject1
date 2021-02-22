@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using TechTalk.SpecFlow;
-//using Sharedlib;
+using SharedLib;
 
 namespace SpecFlowProject1
 {
@@ -36,7 +36,7 @@ namespace SpecFlowProject1
         [When(@"calc_mpg is called")]
         public void WhenCalc_MpgIsCalled()
         {
-            FuelEfficency
+            FuelEfficiency f = new FuelEfficiency();
             ScenarioContext.Add("mpg", calc_mpg(_scenarioContext.Get<int>("miles"), _scenarioContext.Get<int>("gallons"));
 
         }
@@ -44,7 +44,7 @@ namespace SpecFlowProject1
         [Then(@"Fuel Efficiency is (.*)")]
         public void ThenTheFuelEfficiencyShouldBe(int p0)
         {
-            var
+            
         }
     }
 }

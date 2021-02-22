@@ -4,8 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpecFlowProject1", "SpecFlowProject1\SpecFlowProject1.csproj", "{4145AB4B-FA49-455B-B29D-C99F8020A47A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F6914592-A389-4C6A-9B9C-361FD1A32767} = {F6914592-A389-4C6A-9B9C-361FD1A32767}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharedlib", "Class1\Sharedlib.csproj", "{F6914592-A389-4C6A-9B9C-361FD1A32767}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedLib", "Class1\SharedLib.csproj", "{F6914592-A389-4C6A-9B9C-361FD1A32767}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
