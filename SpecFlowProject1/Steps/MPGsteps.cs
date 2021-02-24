@@ -15,43 +15,43 @@ namespace SpecFlowProject1
 
         private readonly ScenarioContext _scenarioContext;
 
-        public MPGsteps(ScenarioContext scenarioContext) 
+        public MPGsteps(ScenarioContext scenarioContext)
         {
             _scenarioContext = scenarioContext;
         }
 
-
-
         [Given(@"Miles driven is (.*)")]
         public void GivenMilesDrivenIs(int p0)
         {
-            _scenarioContext.Add("miles",p0);
+
+            float miles = Convert.ToSingle(p0);
+                _scenarioContext.Add("miles", miles);
         }
 
         [Given(@"Gallons used is (.*)")]
         public void GivenGallonsUsedIs(int p0)
         {
-            _scenarioContext.Add("gallons", p0);
+            float gallons = Convert.ToSingle(p0);
+            _scenarioContext.Add("gallons", gallons);
+            
         }
 
         [When(@"calc_mpg is called")]
         public void WhenCalc_MpgIsCalled()
         {
             FuelEfficiency f = new FuelEfficiency();
-            _scenarioContext.Add("mpg", calc_mpg(_scenarioContext.Get<int>("miles"), _scenarioContext.Get<int>("gallons"));
-
+            _scenarioContext.Add("mpg", f.calc_mpg(
+            _scenarioContext.Get<float>("miles"),
+            _scenarioContext.Get<float>("gallons")
+            ));
         }
 
-        private object calc_mpg(int v1, int v2)
+        [Then(@"the fuel efficiency should be (.*)")]
+        public void ThenTheFuelEfficiencyShouldBe(float p0)
         {
-            throw new NotImplementedException();
-        }
-
-        [Then(@"Fuel Efficiency is (.*)")]
-        public void ThenTheFuelEfficiencyShouldBe(int p0)
-        {
-            var m = _scenarioContext.Get<int>("mpg");
+            var m = _scenarioContext.Get<float>("mpg");
             m.Should().Be(p0);
         }
+
     }
 }
