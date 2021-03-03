@@ -15,6 +15,7 @@ Scenario: MPG-EASY
 	Then the fuel efficiency should be 8.5
 
 
+
 Scenario: Gas Hog
 	Given gallons used more than 10 
 	Given miles driven is less than 100 
